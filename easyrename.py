@@ -173,13 +173,15 @@ def rename():
                 if selection.lower() in 'a' 'all':
                     parameters['yes'] = True
 
-            os.rename(os.fsdecode(parameters['directory']) + filename, os.fsdecode(parameters['directory']) + new_filename)
+            os.rename(os.fsdecode(parameters['directory']) + filename,
+                      os.fsdecode(parameters['directory']) + new_filename)
             if parameters['verbose']:
                 print(f'Renamed File: {new_filename}')
 
 
     except IndexError as err:
         print(f'Error: {str(err)}')
+        sys.exit(1)
 
 
 
